@@ -1,0 +1,10 @@
+f= input('Enter function:  ','s');
+F=inline(vectorize(f));
+a=input('Enter lower limit:  ');
+b=input('Enter upper limit:  ');
+n=input('Enter step:  ');
+h=(b-a)/n;
+x= a:h:b;
+y=F(x);
+I_tra=(h/2)*(y(1)+y(end)+2*sum(y(2:n)))
+I_sem=(h/3)*(y(1)+y(end)+4*sum(y(2:2:n))+2*sum(y(3:2:n)))
